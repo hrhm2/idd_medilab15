@@ -1,8 +1,14 @@
 #include "ParticleVec2.h"
 
 ParticleVec2::ParticleVec2(){
+<<<<<<< HEAD
     position.set(ofGetWidth()/2.0,ofGetHeight()/2.0);
     velocity.set(0,0);
+=======
+    position.set(ofGetWidth()/2.0, ofGetHeight()/2.0);
+    velocity.set(0, 0);
+    acceleration.set(0, 0);
+>>>>>>> tado/master
     mass = 1.0;
     radius = 5.0;
     friction = 0.01;
@@ -11,6 +17,7 @@ ParticleVec2::ParticleVec2(){
 void ParticleVec2::update(){
     acceleration -= velocity * friction;
     velocity += acceleration;
+<<<<<<< HEAD
     position +=velocity;
     acceleration.set(0,0);
     
@@ -20,6 +27,14 @@ void ParticleVec2::draw(){
     ofCircle(position.x, position.y,radius);
     
 
+=======
+    position += velocity;
+    acceleration.set(0, 0);
+}
+
+void ParticleVec2::draw(){
+    ofCircle(position.x, position.y, radius);
+>>>>>>> tado/master
 }
 
 void ParticleVec2::addForce(ofVec2f force){
@@ -33,7 +48,11 @@ void ParticleVec2::bounceOffWalls(){
     }
     if (position.x > ofGetWidth()) {
         velocity.x *= -1;
+<<<<<<< HEAD
         position.x > ofGetWidth();
+=======
+        position.x = ofGetWidth();
+>>>>>>> tado/master
     }
     if (position.y < 0) {
         velocity.y *= -1;
@@ -41,9 +60,26 @@ void ParticleVec2::bounceOffWalls(){
     }
     if (position.y > ofGetHeight()) {
         velocity.y *= -1;
+<<<<<<< HEAD
         position.y > ofGetHeight();
     }
 
 }
 
+=======
+        position.y = ofGetHeight();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> tado/master
 
